@@ -25,7 +25,6 @@
 #error Unable to determine arch
 #endif
 
-
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -36,12 +35,14 @@
  * @return machine endian value in big endian ISAs is a no-op
  */
 extern uint16_t uint16_from_be(const uint8_t *buff);
+
 /**
  * Takes buffer buff and reads 4 bytes into an uint32
  * @param buff buffer to read from if needed offset first
  * @return machine endian value in big endian ISAs is a no-op
  */
 extern uint32_t uint32_from_be(const uint8_t *buff);
+
 /**
  * Takes buffer buff and reads 8 bytes into an uint64
  * @param buff buffer to read from if needed offset first
@@ -55,12 +56,14 @@ extern uint64_t uint64_from_be(const uint8_t *buff);
  * @return machine endian value in little endian ISAs is a no-op
  */
 extern uint16_t uint16_from_le(const uint8_t *buff);
+
 /**
  * Takes buffer buff and reads 4 bytes into an uint32
  * @param buff buffer to read from if needed offset first
  * @return machine endian value in little endian ISAs is a no-op
  */
 extern uint32_t uint32_from_le(const uint8_t *buff);
+
 /**
  * Takes buffer buff and reads 8 bytes into an uint64
  * @param buff buffer to read from if needed offset first
@@ -68,6 +71,10 @@ extern uint32_t uint32_from_le(const uint8_t *buff);
  */
 extern uint64_t uint64_from_le(const uint8_t *buff);
 
+/**
+ * Detect whether the runtime platform is little endian or not
+ * @return true if the runtime is little endian false otherwise (usually big endian)
+ */
 extern bool is_le_rt();
 
 #endif // KKC_ENDIANESS_H
