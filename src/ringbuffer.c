@@ -22,7 +22,7 @@ int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n)
 	if (n > ref->size)
 		return -1;
 
-	kkc_mem_copy(ref->data + ref->w_off, src, n);
+	kkc_mem_copy_mod(ref->data + ref->w_off, src, n, ref->size);
 	ref->w_off = (ref->w_off + n) % ref->size;
 	return 0;
 }
