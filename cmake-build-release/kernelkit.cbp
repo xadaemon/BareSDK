@@ -8,134 +8,140 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="demo">
-				<Option output="/home/mxavier/src/kernelkit/cmake-build-release/demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option output="/home/mxavier/src/KernelKitCore/cmake-build-release/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/home/mxavier/src/KernelKitCore/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/lib64/clang/12.0.1/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 demo"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 demo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="demo/fast">
-				<Option output="/home/mxavier/src/kernelkit/cmake-build-release/demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option output="/home/mxavier/src/KernelKitCore/cmake-build-release/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/home/mxavier/src/KernelKitCore/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/lib64/clang/12.0.1/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 demo/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 demo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="kernelkit">
-				<Option output="/home/mxavier/src/kernelkit/cmake-build-release/libkernelkit.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option output="/home/mxavier/src/KernelKitCore/cmake-build-release/libkernelkit.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/home/mxavier/src/KernelKitCore/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/lib64/clang/12.0.1/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 kernelkit"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 kernelkit"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="kernelkit/fast">
-				<Option output="/home/mxavier/src/kernelkit/cmake-build-release/libkernelkit.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-release"/>
+				<Option output="/home/mxavier/src/KernelKitCore/cmake-build-release/libkernelkit.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/KernelKitCore/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/home/mxavier/src/KernelKitCore/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/lib64/clang/12.0.1/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 kernelkit/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 kernelkit/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/KernelKitCore/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mxavier/src/kernelkit/demo.c">
+		<Unit filename="/home/mxavier/src/KernelKitCore/demo.c">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/include/ringbuffer.h">
+		<Unit filename="/home/mxavier/src/KernelKitCore/include/ringbuffer.h">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/include/stack.h">
+		<Unit filename="/home/mxavier/src/KernelKitCore/include/stack.h">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/src/ringbuffer.c">
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/qeue.c">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/src/stack.c">
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/qeue.h">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/src/util.c">
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/ringbuffer.c">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/src/util.h">
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/stack.c">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/CMakeLists.txt">
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/util.c">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/KernelKitCore/src/util.h">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/KernelKitCore/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

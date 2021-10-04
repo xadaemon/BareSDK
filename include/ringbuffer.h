@@ -8,7 +8,6 @@
 
 #include <stddef.h>
 #include <stdint.h>
-#include <stdbool.h>
 
 /**
  * Ringbuffer struct, this implementation deals in bytes,
@@ -24,8 +23,7 @@ struct ringbuffer {
 };
 
 /**
- * Initialize a ringbuffer using `buff` as a backing buffer this function gives
- * the caller full control of the lifetime of the backing buffer
+ * Initialize a ringbuffer using buff as a backing buffer
  * @attention Care must be taken to not use after freeing of the `buff` buffer (not applicable to stack memory)
  * @param ref the ringbuffer to initialize
  * @param buff
@@ -37,12 +35,19 @@ extern void ringbuffer_init(struct ringbuffer *ref, uint8_t *buff,
 /**
  * Write n bytes from src to to the ringbuffer ref
  * @param ref the ringbuffer to operate on
- * @param src from where to copy bytes from
+ * @param src where to copy the bytes from
  * @param n how many bytes to copy
- * @return some positive number &le; n on success, 0 on failure
+ * @return -1 on failure 0 on success
  */
 extern int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n);
 
+/**
+ *
+ * @param ref the ringbuffer to operate on
+ * @param dst where to copy bytes to
+ * @param n how many bytes to retrieve
+ * @return -1 on failure 0 on success
+ */
 extern size_t ringbuffer_read(struct ringbuffer *ref, uint8_t *dst, size_t n);
 
 #endif //KERNELKIT_RINGBUFF_H

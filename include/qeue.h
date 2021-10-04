@@ -3,22 +3,23 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#ifndef KERNELKIT_STACK_H
-#define KERNELKIT_STACK_H
+
+#ifndef KKC_QEUE_H_
+#define KKC_QEUE_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-struct stack {
-	uint8_t *data;
-	/**
-	 * The rw_off of the stack as an offset that satisfies offset < stack_size
-	 */
-	size_t rw_off;
-	/**
-	 * The stack size in bytes
-	 */
-	size_t stack_size;
+struct queue {
+    uint8_t *data;
+    /**
+     * The rw_off of the queue as an offset that satisfies offset < stack_size
+     */
+    size_t rw_off;
+    /**
+     * The stack size in bytes
+     */
+    size_t queue_size;
 };
 
 /**
@@ -29,7 +30,7 @@ struct stack {
  * @param buff Backing buffer to use with this stack
  * @param buff_len How long is the backing buffer
  */
-extern void stack_init(struct stack *ref, uint8_t *buff, size_t buff_len);
+extern void queue_init(struct queue *ref, uint8_t *buff, size_t buff_len);
 
 /**
  * Pushes a value on to the rw_off of the `ref` stack.
@@ -38,7 +39,7 @@ extern void stack_init(struct stack *ref, uint8_t *buff, size_t buff_len);
  * @param buff_len How many bytes to push from buff into the stack
  * @return -1 if the push would go over the stack's rw_off 0 otherwise
  */
-extern int stack_push(struct stack *ref, uint8_t *buff, size_t buff_len);
+extern int queue_add(struct queue *ref, uint8_t *buff, size_t buff_len);
 
 /**
  * Removes a value off the rw_off of the stack (it will remain in memory however).
@@ -47,6 +48,5 @@ extern int stack_push(struct stack *ref, uint8_t *buff, size_t buff_len);
  * @param buff_len How many bytes to pop from the stack into buff
  * @return -1 if the pop would go under the stack start 0 otherwise
  */
-extern int stack_pop(struct stack *ref, uint8_t *buff, size_t buff_len);
-
-#endif
+extern int queue_head(struct queue *ref, uint8_t *buff, size_t buff_len);
+#endif //KKC_QEUE_H_
