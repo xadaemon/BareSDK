@@ -6,7 +6,7 @@
 
 #ifndef KKC_ENDIANESS_H
 #define KKC_ENDIANESS_H
-
+#include <endian.h>
 #if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN || \
     defined(__BIG_ENDIAN__) || \
     defined(__ARMEB__) || \
