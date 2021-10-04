@@ -27,6 +27,44 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="demo">
+				<Option output="/home/mxavier/src/kernelkit/cmake-build-debug/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo/fast">
+				<Option output="/home/mxavier/src/kernelkit/cmake-build-debug/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/home/mxavier/src/kernelkit/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/clang/12.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mxavier/src/kernelkit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/mxavier/src/kernelkit/cmake-build-debug"/>
 				<Option type="4"/>
@@ -76,10 +114,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mxavier/src/kernelkit/include/ringbuff.h">
+		<Unit filename="/home/mxavier/src/kernelkit/demo.c">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/kernelkit/include/ringbuffer.h">
 			<Option target="kernelkit"/>
 		</Unit>
-		<Unit filename="/home/mxavier/src/kernelkit/src/ringbuff.c">
+		<Unit filename="/home/mxavier/src/kernelkit/include/stack.h">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/kernelkit/src/ringbuffer.c">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/kernelkit/src/stack.c">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/kernelkit/src/util.c">
+			<Option target="kernelkit"/>
+		</Unit>
+		<Unit filename="/home/mxavier/src/kernelkit/src/util.h">
 			<Option target="kernelkit"/>
 		</Unit>
 		<Unit filename="/home/mxavier/src/kernelkit/CMakeLists.txt">
