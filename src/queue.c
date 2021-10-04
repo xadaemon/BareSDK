@@ -4,7 +4,7 @@
  * All rights reserved.
  */
 
-#include "qeue.h"
+#include "queue.h"
 #include "util.h"
 
 void queue_init(struct queue *ref, uint8_t *buff, size_t buff_len)
