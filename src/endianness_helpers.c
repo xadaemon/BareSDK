@@ -81,7 +81,7 @@ uint64_t uint64_from_le(const uint8_t *buff)
 	assist.bytes[7] = buff[7];
 	return assist.val;
 }
-#elifdef BE_ARCH
+#elif defined(BE_ARCH)
 uint16_t uint16_from_le(const uint8_t *buff)
 {
 	union {
