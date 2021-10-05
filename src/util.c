@@ -12,22 +12,31 @@ void kkc_memcopy(void *dst, void *src, size_t n)
 	}
 }
 
-void kkc_memcopy_dst_mod(void *dst, void *src, size_t len, size_t n)
+void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod)
 {
 	size_t i_mod;
-	for (size_t i = 0; i < len; ++i) {
-		i_mod = i % n;
+	for (size_t i = 0; i < n; ++i) {
+		i_mod = i % mod;
 		((uint8_t *)dst)[i] = ((uint8_t *)src)[i_mod];
 	}
 }
 
-void kkc_memcopy_src_mod(void *dst, void *src, size_t len, size_t n)
+void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod)
 {
 	size_t i_mod;
-	for (size_t i = 0; i < len; ++i) {
-		i_mod = i % n;
+	for (size_t i = 0; i < n; ++i) {
+		i_mod = i % mod;
 		((uint8_t *)dst)[i_mod] = ((uint8_t *)src)[i];
 	}
+}
+
+bool kkc_strcmp(const char *a, const char *b, size_t n)
+{
+	uint8_t res = 0;
+	for (size_t i = 0; i < n; i++) {
+		res = a[i] ^ b[i];
+	}
+	return !res;
 }
 
 size_t min(size_t x, size_t y)
