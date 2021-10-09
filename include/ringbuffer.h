@@ -26,8 +26,8 @@ struct ringbuffer {
  * Initialize a ringbuffer using buff as a backing buffer
  * @attention Care must be taken to not use after freeing of the `buff` buffer (not applicable to stack memory)
  * @param ref the ringbuffer to initialize
- * @param buff
- * @param buff_len
+ * @param buff the buffer to initialize
+ * @param buff_len how long is the buffer
  */
 extern void ringbuffer_init(struct ringbuffer *ref, uint8_t *buff,
 			    size_t buff_len);
@@ -50,4 +50,4 @@ extern int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n);
  */
 extern size_t ringbuffer_read(struct ringbuffer *ref, uint8_t *dst, size_t n);
 
-#endif //KERNELKIT_RINGBUFF_H
+#endif//KERNELKIT_RINGBUFF_H
