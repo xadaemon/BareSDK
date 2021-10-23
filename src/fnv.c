@@ -8,7 +8,7 @@
 const uint64_t FNV_OFFSET_BASE = 0xcbf29ce484222325;
 const uint64_t FNV_PRIME = 0x100000001b3;
 
-inline uint64_t fnv1_impl(const uint8_t *data, size_t n)
+inline uint64_t fnv1(const uint8_t *data, size_t n)
 {
 	uint64_t hash = FNV_OFFSET_BASE;
 
@@ -19,7 +19,7 @@ inline uint64_t fnv1_impl(const uint8_t *data, size_t n)
 	return hash;
 }
 
-inline uint64_t fnv1a_impl(const uint8_t *data, size_t n)
+inline uint64_t fnv1a(const uint8_t *data, size_t n)
 {
 	uint64_t hash = FNV_OFFSET_BASE;
 
