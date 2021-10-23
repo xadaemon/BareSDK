@@ -15,10 +15,6 @@ int main(void)
 	uint8_t demo_stack_buff[128];
 	uint8_t demo_ring_buff[64];
 	uint8_t ret[2];
-	uint8_t *retd = NULL;
-
-	char *keys[4] = {"test1", "test2", "test3", "test4"};
-	char *vals[4] = {"val1", "val2", "val3", "val4"};
 
 	printf("Starting demo\n\n");
 	stack_init(&demo_stack, demo_stack_buff, 128);
