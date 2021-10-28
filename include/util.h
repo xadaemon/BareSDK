@@ -33,8 +33,31 @@ extern void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod);
  * @param mod wrap over this mod
  */
 extern void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
+/**
+ * Compare a to b in constant time a and b must have the same length n
+ * @param a
+ * @param b
+ * @param n
+ * @return 0 if the a != b 1 otherwise
+ */
 extern bool kkc_ct_strcmp(const char *a, const char *b, size_t n);
+/**
+ * Compare a to b with short circuiting
+ * @param a
+ * @param b
+ * @param n
+ * @return 0 if the a != b 1 otherwise
+ */
+extern bool kkc_strcmp(const char *a, const char *b, size_t n);
+/**
+ * Measure a C string length up to the first null character
+ * @param str the string to measure
+ * @param max the maximum length to measure to (to avoid dos)
+ * @return the size of the string
+ */
+extern size_t strlen(const char *str, size_t max);
 extern size_t min(size_t x, size_t y);
 extern size_t max(size_t x, size_t y);
+
 
 #endif

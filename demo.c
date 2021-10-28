@@ -1,7 +1,9 @@
+#include <crc32.h>
 #include <kkc_codes.h>
 #include <ringbuffer.h>
 #include <stack.h>
 #include <stdio.h>
+#include <util.h>
 
 union {
 	uint16_t integer;
@@ -15,6 +17,8 @@ int main(void)
 	uint8_t demo_stack_buff[128];
 	uint8_t demo_ring_buff[64];
 	uint8_t ret[2];
+	const char *str = "Hello World!";
+	size_t len = strlen(str, 100);
 
 	printf("Starting demo\n\n");
 	stack_init(&demo_stack, demo_stack_buff, 128);
@@ -36,6 +40,9 @@ int main(void)
 		ringbuffer_read(&demo_ring, ret, 2);
 		printf("read %d\n", (uint16_t)ret[0]);
 	}
+
+	printf("%s, %X\n", str, crc32_calc((uint8_t *)str, len));
+	printf("%s, %X\n", str, crc32c_calc((uint8_t *)str, len));
 
 	return 0;
 }
