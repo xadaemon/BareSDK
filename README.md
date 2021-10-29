@@ -1,4 +1,4 @@
-# KernelKitCore
+# KernelKitCore [![Build](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml/badge.svg)](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml)
 
 Low level data structures for kernel development, these are made to be used in low level code, thus they compile under a
 freestanding environment and do not need any headers other than the compiler bundled ones.
