@@ -22,7 +22,7 @@ int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n)
 	if (n > ref->size)
 		return -1;
 
-	kkc_memcopy_dst_mod(ref->data + ref->w_off, src, n, ref->size);
+	bsdk_memcopy_dst_mod(ref->data + ref->w_off, src, n, ref->size);
 	ref->w_off = (ref->w_off + n) % ref->size;
 	return 0;
 }
@@ -35,7 +35,7 @@ size_t ringbuffer_read(struct ringbuffer *ref, uint8_t *dst, size_t n)
 	if (n > ref->size)
 		return -1;
 
-	kkc_memcopy_src_mod(dst, ref->data + ref->r_off, n, ref->size);
+	bsdk_memcopy_src_mod(dst, ref->data + ref->r_off, n, ref->size);
 	ref->r_off = (ref->r_off + n) % ref->size;
 	return 0;
 }

@@ -1,11 +1,11 @@
-# KernelKitCore [![Build](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml/badge.svg)](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml)
+# BareSDK [![Build](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml/badge.svg)](https://github.com/DarthUdp/KernelKitCore/actions/workflows/cmake.yml)
 
 Low level data structures for kernel development, these are made to be used in low level code, thus they compile under a
 freestanding environment and do not need any headers other than the compiler bundled ones.
 
 To accomplish this goal the provided structures expect to be passed allocated buffers when they need them, this gives
 you the flexibility of doing allocation as is convenient for your usage, but you need to pay close attention to
-lifetimes.
+not use after free for example.
 
 # Minimum C version
 

@@ -3,8 +3,8 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#ifndef KERNELKIT_UTIL_H
-#define KERNELKIT_UTIL_H
+#ifndef BSDK_UTIL_H
+#define BSDK_UTIL_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -16,7 +16,7 @@
  * @param src Where to copy from
  * @param n How many bytes to copy
  */
-extern void kkc_memcopy(void *dst, void *src, size_t n);
+extern void bsdk_memcopy(void *dst, void *src, size_t n);
 /**
  * Copy n bytes from src to dest wrapping over mod in dst
  * @param dst Where to copy to
@@ -24,7 +24,7 @@ extern void kkc_memcopy(void *dst, void *src, size_t n);
  * @param n How many bytes to copy
  * @param mod wrap over this mod
  */
-extern void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod);
+extern void bsdk_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod);
 /**
  * Copy n bytes from src to dest wrapping over mod in src
  * @param dst Where to copy to
@@ -32,7 +32,7 @@ extern void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod);
  * @param n How many bytes to copy
  * @param mod wrap over this mod
  */
-extern void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
+extern void bsdk_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
 /**
  * Compare a to b in constant time a and b must have the same length n
  * @param a
@@ -40,15 +40,16 @@ extern void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
  * @param n
  * @return 0 if the a != b 1 otherwise
  */
-extern bool kkc_ct_strcmp(const char *a, const char *b, size_t n);
+extern bool bsdk_ct_strcmp(const char *a, const char *b, size_t n);
 /**
- * Compare a to b with short circuiting
+ * Compare a to b without short circuiting
  * @param a
  * @param b
  * @param n
  * @return 0 if the a != b 1 otherwise
  */
-extern bool kkc_strcmp(const char *a, const char *b, size_t n);
+extern bool bsdk_strcmp(const char *a, const char *b, size_t n);
+extern bool bsdk_bytecmp(const uint8_t *a, const uint8_t *b, size_t n);
 /**
  * Measure a C string length up to the first null character
  * @param str the string to measure

@@ -5,14 +5,14 @@
 */
 #include <util.h>
 
-inline void kkc_memcopy(void *dst, void *src, size_t n)
+inline void bsdk_memcopy(void *dst, void *src, size_t n)
 {
 	for (size_t i = 0; i < n; ++i) {
 		((uint8_t *)dst)[i] = ((uint8_t *)src)[i];
 	}
 }
 
-inline void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod)
+inline void bsdk_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod)
 {
 	size_t i_mod;
 	for (size_t i = 0; i < n; ++i) {
@@ -21,7 +21,7 @@ inline void kkc_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod)
 	}
 }
 
-inline void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod)
+inline void bsdk_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod)
 {
 	size_t i_mod;
 	for (size_t i = 0; i < n; ++i) {
@@ -30,7 +30,7 @@ inline void kkc_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod)
 	}
 }
 
-bool kkc_ct_strcmp(const char *a, const char *b, size_t n)
+bool bsdk_ct_strcmp(const char *a, const char *b, size_t n)
 {
 	volatile uint8_t res = 0;
 	for (size_t i = 0; i < n; i++) {
@@ -39,7 +39,16 @@ bool kkc_ct_strcmp(const char *a, const char *b, size_t n)
 	return !res;
 }
 
-bool kkc_strcmp(const char *a, const char *b, size_t n)
+bool bsdk_strcmp(const char *a, const char *b, size_t n)
+{
+	for (size_t i = 0; i < n; i++) {
+		if ((a[i] ^ b[i]) != 0)
+			return 0;
+	}
+	return 1;
+}
+
+bool bsdk_bytecmp(const uint8_t *a, const uint8_t *b, size_t n)
 {
 	for (size_t i = 0; i < n; i++) {
 		if ((a[i] ^ b[i]) != 0)

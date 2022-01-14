@@ -22,7 +22,7 @@ int queue_add(struct queue *ref, uint8_t *buff, size_t buff_len)
 	if (ref->rw_off + buff_len > ref->queue_size)
 		return -1;
 
-	kkc_memcopy((ref->data + ref->rw_off), buff, buff_len);
+	bsdk_memcopy((ref->data + ref->rw_off), buff, buff_len);
 	return 0;
 }
 
@@ -34,7 +34,7 @@ int queue_head(struct queue *ref, uint8_t *buff, size_t buff_len)
 	if (ref->rw_off + buff_len > ref->queue_size)
 		return -1;
 
-	kkc_memcopy(buff, (ref->data + ref->rw_off), buff_len);
+	bsdk_memcopy(buff, (ref->data + ref->rw_off), buff_len);
 	ref->rw_off += buff_len;
 	return 0;
 }

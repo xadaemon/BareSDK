@@ -5,7 +5,7 @@
 */
 
 #include "util.h"
-#include <kkc_codes.h>
+#include <bsdk_codes.h>
 #include <stack.h>
 
 void stack_init(struct stack *ref, uint8_t *buff, size_t buff_len)
@@ -25,7 +25,7 @@ int stack_push(struct stack *ref, uint8_t *buff, size_t buff_len)
 		return -1;
 	}
 
-	kkc_memcopy((ref->data + ref->rw_off), buff, buff_len);
+	bsdk_memcopy((ref->data + ref->rw_off), buff, buff_len);
 	ref->rw_off += buff_len;
 	return 0;
 }
@@ -40,6 +40,6 @@ int stack_pop(struct stack *ref, uint8_t *buff, size_t buff_len)
 	}
 
 	ref->rw_off -= buff_len;
-	kkc_memcopy(buff, (ref->data + ref->rw_off), buff_len);
+	bsdk_memcopy(buff, (ref->data + ref->rw_off), buff_len);
 	return 0;
 }

@@ -3,8 +3,8 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#ifndef KERNELKIT_STACK_H
-#define KERNELKIT_STACK_H
+#ifndef BSDK_STACK_H
+#define BSDK_STACK_H
 
 #include <stddef.h>
 #include <stdint.h>

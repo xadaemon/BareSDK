@@ -3,8 +3,8 @@
 * Copyright (c) 2021, Matheus Xavier
 * All rights reserved.
 */
-#ifndef KERNELKIT_CRC32_H
-#define KERNELKIT_CRC32_H
+#ifndef BSDK_CRC32_H
+#define BSDK_CRC32_H
 
 #include <stddef.h>
 #include <stdint.h>

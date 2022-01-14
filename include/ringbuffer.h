@@ -3,8 +3,8 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#ifndef KERNELKIT_RINGBUFF_H
-#define KERNELKIT_RINGBUFF_H
+#ifndef BSDK_RINGBUFF_H
+#define BSDK_RINGBUFF_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -50,4 +50,4 @@ extern int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n);
  */
 extern size_t ringbuffer_read(struct ringbuffer *ref, uint8_t *dst, size_t n);
 
-#endif//KERNELKIT_RINGBUFF_H
+#endif//BSDK_RINGBUFF_H

@@ -3,8 +3,8 @@
 * Copyright (c) 2021, Matheus Xavier
 * All rights reserved.
 */
-#ifndef KERNELKIT_FNV_H
-#define KERNELKIT_FNV_H
+#ifndef BSDK_FNV_H
+#define BSDK_FNV_H
 
 #include <stddef.h>
 #include <stdint.h>

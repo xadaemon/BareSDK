@@ -1,5 +1,7 @@
+#include <bsdk_codes.h>
 #include <crc32.h>
-#include <kkc_codes.h>
+#include <hashmap.h>
+#include <malloc.h>
 #include <ringbuffer.h>
 #include <stack.h>
 #include <stdio.h>
@@ -14,6 +16,8 @@ int main(void)
 {
 	struct stack demo_stack;
 	struct ringbuffer demo_ring;
+	struct hashmap_container hashmap;
+	struct hashmap_entry *hm_buff = malloc(HASHMAP_SIZE_FOR(10));
 	uint8_t demo_stack_buff[128];
 	uint8_t demo_ring_buff[64];
 	uint8_t ret[2];
@@ -43,6 +47,11 @@ int main(void)
 
 	printf("%s, %X\n", str, crc32_calc((uint8_t *)str, len));
 	printf("%s, %X\n", str, crc32c_calc((uint8_t *)str, len));
+
+	hashmap_init(&hashmap, hm_buff, 10);
+	hashmap_insert(&hashmap, (uint8_t *)str, len, (void *)str);
+	char *str2 = (char *)hashmap_get(&hashmap, (uint8_t *)str, len);
+	printf("%s \n", str2);
 
 	return 0;
 }

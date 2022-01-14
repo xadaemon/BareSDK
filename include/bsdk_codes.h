@@ -4,8 +4,8 @@
 * All rights reserved.
 */
 
-#ifndef KERNELKIT_CODES_H
-#define KERNELKIT_CODES_H
+#ifndef BARESDK_CODES_H
+#define BARESDK_CODES_H
 
 #include <stdint.h>
 
