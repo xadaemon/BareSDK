@@ -11,25 +11,15 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define HASHMAP_SIZE_FOR(N) (N) * sizeof(struct bsdk_hashmap_entry)
-#define HMP_P_IN_N_BYTES(N) (N) / sizeof(struct bsdk_hashmap_entry)
-#define HASHMAP_ENTRY_SZ sizeof(struct bsdk_hashmap_entry)
+extern const size_t HASHMAP_ENTRY_SZ;
+
+#define HASHMAP_SIZE_FOR(N) ((N) * HASHMAP_ENTRY_SZ)
 #define HASHMAP_KEY_FRAG_LEN 255
 
-struct bsdk_hashmap_entry {
-	/* First 20 bytes of the key for a fast comparison on recovery
-	 */
-	char key_frag[HASHMAP_KEY_FRAG_LEN];
-	bool used;
-	/* The hash stored in this slot
-	 */
-	uint64_t hash;
-	void *val;
-};
+struct bsdk_hashmap_entry;
 
 struct bsdk_hashmap {
 	uint64_t len;
-	uint64_t stored;
 	struct bsdk_hashmap_entry *entries;
 };
 
