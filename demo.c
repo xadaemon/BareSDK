@@ -1,10 +1,10 @@
 #include <bsdk_codes.h>
 #include <bsdk_crc32.h>
+#include <bsdk_hashmap.h>
+#include <bsdk_math.h>
 #include <bsdk_ringbuffer.h>
 #include <bsdk_stack.h>
 #include <bsdk_util.h>
-#include <bsdk_math.h>
-#include <hashmap.h>
 #include <malloc.h>
 #include <stdio.h>
 
@@ -17,7 +17,7 @@ int main(void)
 {
 	struct bsdk_stack demo_stack;
 	struct bsdk_ringbuffer demo_ring;
-	struct bsdk_hashmap_container hashmap;
+	struct bsdk_hashmap hashmap;
 	struct bsdk_hashmap_entry *hm_buff = malloc(HASHMAP_SIZE_FOR(10));
 	uint8_t demo_stack_buff[128];
 	uint8_t demo_ring_buff[64];

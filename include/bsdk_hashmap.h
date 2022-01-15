@@ -27,14 +27,14 @@ struct bsdk_hashmap_entry {
 	void *val;
 };
 
-struct bsdk_hashmap_container {
+struct bsdk_hashmap {
 	uint64_t len;
 	uint64_t stored;
 	struct bsdk_hashmap_entry *entries;
 };
 
-extern int bsdk_hashmap_init(struct bsdk_hashmap_container *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len);
-extern int bsdk_hashmap_insert(struct bsdk_hashmap_container *ref, uint8_t *key, size_t key_len, void *value);
-extern void *bsdk_hashmap_get(struct bsdk_hashmap_container *ref, void *key, size_t key_len);
+extern int bsdk_hashmap_init(struct bsdk_hashmap *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len);
+extern int bsdk_hashmap_insert(struct bsdk_hashmap *ref, uint8_t *key, size_t key_len, void *value);
+extern void *bsdk_hashmap_get(struct bsdk_hashmap *ref, void *key, size_t key_len);
 
-#endif//_HASHMAP_H_
+#endif//BSDK_HASHMAP_H_

@@ -5,10 +5,10 @@
 */
 
 #include <bsdk_fnv.h>
+#include <bsdk_hashmap.h>
 #include <bsdk_util.h>
-#include <hashmap.h>
 
-int bsdk_hashmap_init(struct bsdk_hashmap_container *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len)
+int bsdk_hashmap_init(struct bsdk_hashmap *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len)
 {
 	if (inner_buffer == NULL)
 		return -1;
@@ -19,7 +19,7 @@ int bsdk_hashmap_init(struct bsdk_hashmap_container *ref, struct bsdk_hashmap_en
 	return 0;
 }
 
-int bsdk_hashmap_insert(struct bsdk_hashmap_container *ref, uint8_t *key, size_t key_len, void *value)
+int bsdk_hashmap_insert(struct bsdk_hashmap *ref, uint8_t *key, size_t key_len, void *value)
 {
 	struct bsdk_hashmap_entry entry;
 	uint64_t hash;
@@ -42,7 +42,7 @@ int bsdk_hashmap_insert(struct bsdk_hashmap_container *ref, uint8_t *key, size_t
 	return 0;
 }
 
-extern void *bsdk_hashmap_get(struct bsdk_hashmap_container *ref, void *key, size_t key_len)
+extern void *bsdk_hashmap_get(struct bsdk_hashmap *ref, void *key, size_t key_len)
 {
 	uint64_t hash;
 	uint64_t index;
