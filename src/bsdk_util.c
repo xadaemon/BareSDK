@@ -3,7 +3,7 @@
 * Copyright (c) 2021, Matheus Xavier
 * All rights reserved.
 */
-#include <util.h>
+#include <bsdk_util.h>
 
 inline void bsdk_memcopy(void *dst, void *src, size_t n)
 {
@@ -57,7 +57,7 @@ bool bsdk_bytecmp(const uint8_t *a, const uint8_t *b, size_t n)
 	return 1;
 }
 
-size_t strlen(const char *str, size_t max)
+size_t bsdk_strlen(const char *str, size_t max)
 {
 	size_t i;
 	for (i = 0; i < max; i++) {
@@ -67,14 +67,4 @@ size_t strlen(const char *str, size_t max)
 			continue;
 	}
 	return i;
-}
-
-size_t min(size_t x, size_t y)
-{
-	return x < y ? x : y;
-}
-
-size_t max(size_t x, size_t y)
-{
-	return x > y ? x : y;
 }

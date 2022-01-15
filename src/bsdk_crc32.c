@@ -4,7 +4,7 @@
 * All rights reserved.
 */
 
-#include <crc32.h>
+#include <bsdk_crc32.h>
 
 bool tables_init = 0;
 uint32_t crc32_table[256];

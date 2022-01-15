@@ -3,7 +3,7 @@
 * Copyright (c) 2021, Matheus Xavier
 * All rights reserved.
 */
-#include <fnv.h>
+#include <bsdk_fnv.h>
 
 const uint64_t FNV_OFFSET_BASE = 0xcbf29ce484222325;
 const uint64_t FNV_PRIME = 0x100000001b3;

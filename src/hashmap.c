@@ -4,11 +4,11 @@
 * All rights reserved.
 */
 
-#include <fnv.h>
+#include <bsdk_fnv.h>
+#include <bsdk_util.h>
 #include <hashmap.h>
-#include <util.h>
 
-int hashmap_init(struct hashmap_container *ref, struct hashmap_entry *inner_buffer, uint64_t len)
+int bsdk_hashmap_init(struct bsdk_hashmap_container *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len)
 {
 	if (inner_buffer == NULL)
 		return -1;
@@ -19,9 +19,9 @@ int hashmap_init(struct hashmap_container *ref, struct hashmap_entry *inner_buff
 	return 0;
 }
 
-int hashmap_insert(struct hashmap_container *ref, uint8_t *key, size_t key_len, void *value)
+int bsdk_hashmap_insert(struct bsdk_hashmap_container *ref, uint8_t *key, size_t key_len, void *value)
 {
-	struct hashmap_entry entry;
+	struct bsdk_hashmap_entry entry;
 	uint64_t hash;
 	uint64_t index;
 
@@ -42,7 +42,7 @@ int hashmap_insert(struct hashmap_container *ref, uint8_t *key, size_t key_len, 
 	return 0;
 }
 
-extern void *hashmap_get(struct hashmap_container *ref, void *key, size_t key_len)
+extern void *bsdk_hashmap_get(struct bsdk_hashmap_container *ref, void *key, size_t key_len)
 {
 	uint64_t hash;
 	uint64_t index;

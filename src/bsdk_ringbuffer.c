@@ -3,10 +3,10 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#include <ringbuffer.h>
-#include "util.h"
+#include "bsdk_util.h"
+#include <bsdk_ringbuffer.h>
 
-void ringbuffer_init(struct ringbuffer *ref, uint8_t *buff, size_t buff_len)
+void ringbuffer_init(struct bsdk_ringbuffer *ref, uint8_t *buff, size_t buff_len)
 {
 	ref->data = buff;
 	ref->size = buff_len;
@@ -14,9 +14,9 @@ void ringbuffer_init(struct ringbuffer *ref, uint8_t *buff, size_t buff_len)
 	ref->w_off = 0;
 }
 
-int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n)
+int bsdk_ringbuffer_write(struct bsdk_ringbuffer *ref, uint8_t *src, size_t n)
 {
-	/* If you want to write more than can fit in this ringbuffer it's
+	/* If you want to write more than can fit in this bsdk_ringbuffer it's
 	 * likely an error...
 	 */
 	if (n > ref->size)
@@ -27,9 +27,9 @@ int ringbuffer_write(struct ringbuffer *ref, uint8_t *src, size_t n)
 	return 0;
 }
 
-size_t ringbuffer_read(struct ringbuffer *ref, uint8_t *dst, size_t n)
+size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer *ref, uint8_t *dst, size_t n)
 {
-	/* If you want to read more than can fit in this ringbuffer it's
+	/* If you want to read more than can fit in this bsdk_ringbuffer it's
 	 * likely an error...
 	 */
 	if (n > ref->size)

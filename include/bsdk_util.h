@@ -56,9 +56,7 @@ extern bool bsdk_bytecmp(const uint8_t *a, const uint8_t *b, size_t n);
  * @param max the maximum length to measure to (to avoid dos)
  * @return the size of the string
  */
-extern size_t strlen(const char *str, size_t max);
-extern size_t min(size_t x, size_t y);
-extern size_t max(size_t x, size_t y);
+extern size_t bsdk_strlen(const char *str, size_t max);
 
 
 #endif
