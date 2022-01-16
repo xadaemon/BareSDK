@@ -1,8 +1,9 @@
 /**
- * BSD 3-Clause License
- * Copyright (c) 2021, Matheus Xavier
- * All rights reserved.
- */
+* This file is part of BareSDK and licensed under the:
+* BSD 3-Clause License
+* Copyright (c) 2021, Matheus Xavier
+* All rights reserved.
+*/
 
 #ifndef KKC_QEUE_H_
 #define KKC_QEUE_H_
