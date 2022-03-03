@@ -19,13 +19,14 @@ extern const size_t HASHMAP_ENTRY_SZ;
 
 struct bsdk_hashmap_entry;
 
-struct bsdk_hashmap {
-	uint64_t len;
-	struct bsdk_hashmap_entry *entries;
+struct bsdk_hashmap
+{
+    uint64_t len;
+    struct bsdk_hashmap_entry* entries;
 };
 
-extern int bsdk_hashmap_init(struct bsdk_hashmap *ref, struct bsdk_hashmap_entry *inner_buffer, uint64_t len);
-extern int bsdk_hashmap_insert(struct bsdk_hashmap *ref, uint8_t *key, size_t key_len, void *value);
-extern void *bsdk_hashmap_get(struct bsdk_hashmap *ref, void *key, size_t key_len);
+extern int bsdk_hashmap_init(struct bsdk_hashmap* ref, struct bsdk_hashmap_entry* inner_buffer, uint64_t len);
+extern int bsdk_hashmap_insert(struct bsdk_hashmap* ref, uint8_t* key, size_t key_len, void* value);
+extern void* bsdk_hashmap_get(struct bsdk_hashmap* ref, void* key, size_t key_len);
 
 #endif//BSDK_HASHMAP_H_

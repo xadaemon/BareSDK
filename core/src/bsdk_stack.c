@@ -5,18 +5,18 @@
  * All rights reserved.
 */
 
-#include "bsdk_util.h"
+#include "bsdk_memutils.h"
 #include <bsdk_codes.h>
 #include <bsdk_stack.h>
 
-void stack_init(struct bsdk_stack *ref, uint8_t *buff, size_t buff_len)
+void stack_init(struct bsdk_stack* ref, uint8_t* buff, size_t buff_len)
 {
 	ref->data = buff;
 	ref->stack_size = buff_len;
 	ref->rw_off = 0ul;
 }
 
-int stack_push(struct bsdk_stack *ref, uint8_t *buff, size_t buff_len)
+int stack_push(struct bsdk_stack* ref, uint8_t* buff, size_t buff_len)
 {
 	/* First we check to see if we are not going over the rw_off of the
 	 * bsdk_stack with this push
@@ -31,7 +31,7 @@ int stack_push(struct bsdk_stack *ref, uint8_t *buff, size_t buff_len)
 	return 0;
 }
 
-int stack_pop(struct bsdk_stack *ref, uint8_t *buff, size_t buff_len)
+int stack_pop(struct bsdk_stack* ref, uint8_t* buff, size_t buff_len)
 {
 	/* First we check to see if we are not going under the start of the
 	 * bsdk_stack with this pop */

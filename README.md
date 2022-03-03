@@ -4,8 +4,8 @@ Low level data structures for kernel development, these are made to be used in l
 freestanding environment and do not need any headers other than the compiler bundled ones.
 
 To accomplish this goal the provided structures expect to be passed allocated buffers when they need them, this gives
-you the flexibility of doing allocation as is convenient for your usage, but you need to pay close attention to
-not use after free for example.
+you the flexibility of doing allocation as is convenient for your usage, but you need to pay close attention to not use
+after free for example.
 
 # Minimum C version
 

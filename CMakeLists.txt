@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.19)
 project(kernelkit C)
 
 set(CMAKE_C_STANDARD 99)
-include_directories(include)
+include_directories(core/include)
 
-file(GLOB CSources src/*.c)
-file(GLOB CHeaders include/*.h)
+file(GLOB CSources core/src/*.c)
+file(GLOB CHeaders core/include/*.h)
 add_library(kernelkit STATIC ${CSources} ${CHeaders})
 target_compile_options(kernelkit PUBLIC
         -fstrict-aliasing
