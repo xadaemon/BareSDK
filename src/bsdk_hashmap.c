@@ -5,9 +5,9 @@
  * All rights reserved.
 */
 
-#include <bsdk_fnv.h>
-#include <bsdk_hashmap.h>
-#include <bsdk_memutils.h>
+#include "bsdk_fnv.h"
+#include "bsdk_hashmap.h"
+#include "bsdk_memutils.h"
 
 struct bsdk_hashmap_entry
 {

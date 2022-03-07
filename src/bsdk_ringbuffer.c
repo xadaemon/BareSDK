@@ -4,7 +4,7 @@
  * All rights reserved.
  */
 #include "bsdk_memutils.h"
-#include <bsdk_ringbuffer.h>
+#include "bsdk_ringbuffer.h"
 
 void ringbuffer_init(struct bsdk_ringbuffer* ref, uint8_t* buff, size_t buff_len)
 {

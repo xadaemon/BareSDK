@@ -1,11 +1,17 @@
 cmake_minimum_required(VERSION 3.19)
-project(kernelkit C)
+project(
+        BareSDK
+        VERSION 0.1.0
+        DESCRIPTION "Baremetal Utility SDK"
+        HOMEPAGE_URL "https://github.com/DarthUdp/BareSDK"
+        LANGUAGES C
+)
 
 set(CMAKE_C_STANDARD 99)
-include_directories(core/include)
+include_directories(include)
 
-file(GLOB CSources core/src/*.c)
-file(GLOB CHeaders core/include/*.h)
+file(GLOB CSources src/*.c)
+file(GLOB CHeaders include/*.h)
 add_library(kernelkit STATIC ${CSources} ${CHeaders})
 target_compile_options(kernelkit PUBLIC
         -fstrict-aliasing

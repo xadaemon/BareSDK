@@ -4,7 +4,7 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
 */
-#include <bsdk_memutils.h>
+#include "bsdk_memutils.h"
 
 inline void bsdk_memcopy(void* dst, void* src, size_t n)
 {

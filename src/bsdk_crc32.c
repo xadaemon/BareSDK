@@ -5,7 +5,7 @@
  * All rights reserved.
 */
 
-#include <bsdk_crc32.h>
+#include "bsdk_crc32.h"
 
 bool tables_init = 0;
 
