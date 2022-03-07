@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(
         BareSDK
-        VERSION 0.1.0
+        VERSION 1.1.0
         DESCRIPTION "Baremetal Utility SDK"
         HOMEPAGE_URL "https://github.com/DarthUdp/BareSDK"
         LANGUAGES C
