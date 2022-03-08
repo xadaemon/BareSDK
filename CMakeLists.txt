@@ -8,7 +8,6 @@ project(
 )
 
 set(CMAKE_C_STANDARD 99)
-include_directories(include)
 
 file(GLOB CSources source/*.c)
 file(GLOB CHeaders include/*.h)
@@ -24,6 +23,7 @@ target_compile_options(bareSDK PUBLIC
         -nostdlib
         -static
         )
+target_include_directories(bareSDK PUBLIC include)
 
 add_executable(demo demo.c)
 target_link_libraries(demo bareSDK)
