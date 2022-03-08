@@ -10,10 +10,10 @@ project(
 set(CMAKE_C_STANDARD 99)
 include_directories(include)
 
-file(GLOB CSources src/*.c)
+file(GLOB CSources source/*.c)
 file(GLOB CHeaders include/*.h)
-add_library(kernelkit STATIC ${CSources} ${CHeaders})
-target_compile_options(kernelkit PUBLIC
+add_library(bareSDK STATIC ${CSources} ${CHeaders})
+target_compile_options(bareSDK PUBLIC
         -fstrict-aliasing
         -Wall
         -Wextra
@@ -26,4 +26,4 @@ target_compile_options(kernelkit PUBLIC
         )
 
 add_executable(demo demo.c)
-target_link_libraries(demo kernelkit)
+target_link_libraries(demo bareSDK)

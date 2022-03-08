@@ -17,7 +17,7 @@
 #include <stdint.h>
 
 /**
- * Copy n bytes from src to dest
+ * Copy n bytes from source to dest
  * @param dst Where to copy to
  * @param src Where to copy from
  * @param n How many bytes to copy
@@ -25,7 +25,7 @@
 extern void bsdk_memcopy(void* dst, void* src, size_t n);
 
 /**
- * Copy n bytes from src to dest wrapping over mod in dst
+ * Copy n bytes from source to dest wrapping over mod in dst
  * @param dst Where to copy to
  * @param src Where to copy from
  * @param n How many bytes to copy
@@ -34,7 +34,7 @@ extern void bsdk_memcopy(void* dst, void* src, size_t n);
 extern void bsdk_memcopy_dst_mod(void* dst, void* src, size_t n, size_t mod);
 
 /**
- * Copy n bytes from src to dest wrapping over mod in src
+ * Copy n bytes from source to dest wrapping over mod in source
  * @param dst Where to copy to
  * @param src Where to copy from
  * @param n How many bytes to copy
@@ -78,7 +78,7 @@ extern bool bsdk_bytecmp(const uint8_t* a, const uint8_t* b, size_t n);
 extern size_t bsdk_strlen(const char* str, size_t max);
 
 /**
- * Copies at most n characters from src to dst, stops at null or n
+ * Copies at most n characters from source to dst, stops at null or n
  * @param dst
  * @param src
  * @param n
@@ -87,7 +87,7 @@ extern size_t bsdk_strlen(const char* str, size_t max);
 extern size_t bsdk_strcpn(char* dst, const char* src, size_t n);
 
 /**
- * Copy characters from dst to src until null is found, this function should not
+ * Copy characters from dst to source until null is found, this function should not
  * be used on untrusted values.
  * @unsafe If a non null terminated string is given to this function it has undefined behaviour
  * @warning Use bsdk_strcpn where possible

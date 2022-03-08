@@ -36,7 +36,7 @@ extern void ringbuffer_init(struct bsdk_ringbuffer* ref, uint8_t* buff,
 	size_t buff_len);
 
 /**
- * Write n bytes from src to to the bsdk_ringbuffer ref
+ * Write n bytes from source to to the bsdk_ringbuffer ref
  * @param ref the bsdk_ringbuffer to operate on
  * @param src where to copy the bytes from
  * @param n how many bytes to copy
