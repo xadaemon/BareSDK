@@ -28,29 +28,29 @@ struct bsdk_ringbuffer
 /**
  * Initialize a bsdk_ringbuffer using buff as a backing buffer
  * @attention Care must be taken to not use after freeing of the `buff` buffer (not applicable to bsdk_stack memory)
- * @param ref the bsdk_ringbuffer to initialize
+ * @param self the bsdk_ringbuffer to initialize
  * @param buff the buffer to initialize
  * @param buff_len how long is the buffer
  */
-extern void ringbuffer_init(struct bsdk_ringbuffer* ref, uint8_t* buff,
+extern void ringbuffer_init(struct bsdk_ringbuffer* self, uint8_t* buff,
 	size_t buff_len);
 
 /**
- * Write n bytes from source to to the bsdk_ringbuffer ref
- * @param ref the bsdk_ringbuffer to operate on
+ * Write n bytes from source to to the bsdk_ringbuffer self
+ * @param self the bsdk_ringbuffer to operate on
  * @param src where to copy the bytes from
  * @param n how many bytes to copy
  * @return -1 on failure 0 on success
  */
-extern int bsdk_ringbuffer_write(struct bsdk_ringbuffer* ref, uint8_t* src, size_t n);
+extern int bsdk_ringbuffer_write(struct bsdk_ringbuffer* self, uint8_t* src, size_t n);
 
 /**
  *
- * @param ref the bsdk_ringbuffer to operate on
+ * @param self the bsdk_ringbuffer to operate on
  * @param dst where to copy bytes to
  * @param n how many bytes to retrieve
  * @return -1 on failure 0 on success
  */
-extern size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer* ref, uint8_t* dst, size_t n);
+extern size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer* self, uint8_t* dst, size_t n);
 
 #endif//BSDK_RINGBUFF_H

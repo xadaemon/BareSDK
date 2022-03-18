@@ -22,10 +22,10 @@ inline uint32_t reverse(uint32_t x)
 	return x;
 }
 
-void gen_table(uint32_t* table, uint32_t polynomial, bool reflect_in, bool reflect_out)
+void gen_table(uint32_t* table, uint32_t polynomial, bool selflect_in, bool selflect_out)
 {
 	for (uint32_t byte = 0; byte < 256; ++byte) {
-		uint32_t crc = (reflect_in ? (reverse(byte) >> 24) : byte);
+		uint32_t crc = (selflect_in ? (reverse(byte) >> 24) : byte);
 		for (uint8_t bit = 32; bit > 0; --bit) {
 			if (crc & 0x80000000) {
 				crc = (crc << 1) ^ polynomial;
@@ -33,7 +33,7 @@ void gen_table(uint32_t* table, uint32_t polynomial, bool reflect_in, bool refle
 				crc <<= 1;
 			}
 		}
-		table[byte] = (reflect_out ? reverse(crc) : crc);
+		table[byte] = (selflect_out ? reverse(crc) : crc);
 	}
 }
 

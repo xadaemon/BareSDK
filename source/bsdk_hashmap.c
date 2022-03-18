@@ -23,17 +23,17 @@ struct bsdk_hashmap_entry
 
 const size_t HASHMAP_ENTRY_SZ = sizeof(struct bsdk_hashmap_entry);
 
-int bsdk_hashmap_init(struct bsdk_hashmap* ref, struct bsdk_hashmap_entry* inner_buffer, uint64_t len)
+int bsdk_hashmap_init(struct bsdk_hashmap* self, struct bsdk_hashmap_entry* inner_buffer, uint64_t len)
 {
 	if (inner_buffer == NULL)
 		return -1;
 
-	ref->len = len;
-	ref->entries = inner_buffer;
+	self->len = len;
+	self->entries = inner_buffer;
 	return 0;
 }
 
-int bsdk_hashmap_insert(struct bsdk_hashmap* ref, uint8_t* key, size_t key_len, void* value)
+int bsdk_hashmap_insert(struct bsdk_hashmap* self, uint8_t* key, size_t key_len, void* value)
 {
 	struct bsdk_hashmap_entry entry;
 	uint64_t hash;
@@ -41,11 +41,11 @@ int bsdk_hashmap_insert(struct bsdk_hashmap* ref, uint8_t* key, size_t key_len, 
 
 	hash = fnv1a(key, key_len);
 
-	index = hash % ref->len;
-	if (ref->entries[index].used
-		&& !bsdk_bytecmp((uint8_t*)ref->entries[index].key_frag, key, HASHMAP_KEY_FRAG_LEN)) {
+	index = hash % self->len;
+	if (self->entries[index].used
+		&& !bsdk_bytecmp((uint8_t*)self->entries[index].key_frag, key, HASHMAP_KEY_FRAG_LEN)) {
 		hash = fnv1(key, key_len);
-		index = hash % ref->len;
+		index = hash % self->len;
 	}
 
 	bsdk_memcopy(&entry.key_frag, key, HASHMAP_KEY_FRAG_LEN);
@@ -53,22 +53,22 @@ int bsdk_hashmap_insert(struct bsdk_hashmap* ref, uint8_t* key, size_t key_len, 
 	entry.used = true;
 	entry.val = value;
 
-	bsdk_memcopy(ref->entries + index, &entry, HASHMAP_ENTRY_SZ);
+	bsdk_memcopy(self->entries + index, &entry, HASHMAP_ENTRY_SZ);
 	return 0;
 }
 
-extern void* bsdk_hashmap_get(struct bsdk_hashmap* ref, void* key, size_t key_len)
+extern void* bsdk_hashmap_get(struct bsdk_hashmap* self, void* key, size_t key_len)
 {
 	uint64_t hash;
 	uint64_t index;
 
 	hash = fnv1a(key, key_len);
 
-	index = hash % ref->len;
-	if (ref->entries[index].used && !bsdk_strcmpn(ref->entries[index].key_frag, key, HASHMAP_KEY_FRAG_LEN)) {
+	index = hash % self->len;
+	if (self->entries[index].used && !bsdk_strcmpn(self->entries[index].key_frag, key, HASHMAP_KEY_FRAG_LEN)) {
 		hash = fnv1(key, key_len);
-		index = hash % ref->len;
+		index = hash % self->len;
 	}
 
-	return ref->entries[index].val;
+	return self->entries[index].val;
 }

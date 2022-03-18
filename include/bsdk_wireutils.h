@@ -8,8 +8,8 @@
  * All rights reserved.
  */
 
-#ifndef BSDK_ENDIANESS_H
-#define BSDK_ENDIANESS_H
+#ifndef BSDK_WIRE_H
+#define BSDK_WIRE_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -88,4 +88,4 @@
    (P)[6] = (0x000000000000FF00 & (V)) >> 010, \
    (P)[7] = (0x00000000000000FF & (V)) >> 000, (P) + 8)
 
-#endif // BSDK_ENDIANESS_H
+#endif // BSDK_WIRE_H
