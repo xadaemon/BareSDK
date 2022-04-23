@@ -12,9 +12,7 @@ after free for example.
 This should work with any standards compliant C99 compiler that can provide the following headers:
 
 ```c
-#include <stddef.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <bsdk_common.h>
 ```
 
 It is built and tested under clang and gcc, but as stated above should work under any compiler that can provide the

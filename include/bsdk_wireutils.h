@@ -11,9 +11,7 @@
 #ifndef BSDK_WIRE_H
 #define BSDK_WIRE_H
 
-#include <stddef.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <bsdk_common.h>
 #include <endian.h>
 
 #if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN || \

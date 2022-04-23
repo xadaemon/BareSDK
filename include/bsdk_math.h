@@ -8,9 +8,7 @@
 #ifndef BSDK_MATH_H_
 #define BSDK_MATH_H_
 
-#include <stddef.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <bsdk_common.h>
 
 #define bsdk_min(A, B) ((A) < (B) ? (A):(B))
 #define bsdk_max(A, B) ((A) > (B) ? (A):(B))

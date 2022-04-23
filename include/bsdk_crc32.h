@@ -7,9 +7,7 @@
 #ifndef BSDK_CRC32_H
 #define BSDK_CRC32_H
 
-#include <stddef.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <bsdk_common.h>
 
 #define CRC32POLY 0x04C11DB7u
 #define CRC32CPOLY 0x1EDC6F41u
