@@ -3,10 +3,10 @@
  * Copyright (c) 2021, Matheus Xavier
  * All rights reserved.
  */
-#include "bsdk_memutils.h"
 #include "bsdk_ringbuffer.h"
+#include "bsdk_memutils.h"
 
-void ringbuffer_init(struct bsdk_ringbuffer* self, uint8_t* buff, size_t buff_len)
+void ringbuffer_init(struct bsdk_ringbuffer *self, uint8_t *buff, size_t buff_len)
 {
 	self->data = buff;
 	self->size = buff_len;
@@ -14,7 +14,7 @@ void ringbuffer_init(struct bsdk_ringbuffer* self, uint8_t* buff, size_t buff_le
 	self->w_off = 0;
 }
 
-int bsdk_ringbuffer_write(struct bsdk_ringbuffer* self, uint8_t* src, size_t n)
+int bsdk_ringbuffer_write(struct bsdk_ringbuffer *self, uint8_t *src, size_t n)
 {
 	/* If you want to write more than can fit in this bsdk_ringbuffer it's
 	 * likely an error...
@@ -27,7 +27,7 @@ int bsdk_ringbuffer_write(struct bsdk_ringbuffer* self, uint8_t* src, size_t n)
 	return 0;
 }
 
-size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer* self, uint8_t* dst, size_t n)
+size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer *self, uint8_t *dst, size_t n)
 {
 	/* If you want to read more than can fit in this bsdk_ringbuffer it's
 	 * likely an error...

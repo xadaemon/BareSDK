@@ -12,8 +12,8 @@
 #define BSDK_DATA_STRUCTURES_H
 
 #include <bsdk_hashmap.h>
-#include <bsdk_stack.h>
 #include <bsdk_queue.h>
 #include <bsdk_ringbuffer.h>
+#include <bsdk_stack.h>
 
 #endif//BSDK_DATA_STRUCTURES_H

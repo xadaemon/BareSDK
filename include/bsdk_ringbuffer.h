@@ -17,12 +17,11 @@
  * constant size or to keep track of element sizing
  * elsewhere.
  */
-struct bsdk_ringbuffer
-{
-    size_t size;
-    size_t r_off;
-    size_t w_off;
-    uint8_t* data;
+struct bsdk_ringbuffer {
+	size_t size;
+	size_t r_off;
+	size_t w_off;
+	uint8_t *data;
 };
 
 /**
@@ -32,8 +31,8 @@ struct bsdk_ringbuffer
  * @param buff the buffer to initialize
  * @param buff_len how long is the buffer
  */
-extern void ringbuffer_init(struct bsdk_ringbuffer* self, uint8_t* buff,
-	size_t buff_len);
+extern void ringbuffer_init(struct bsdk_ringbuffer *self, uint8_t *buff,
+			    size_t buff_len);
 
 /**
  * Write n bytes from source to to the bsdk_ringbuffer self
@@ -42,7 +41,7 @@ extern void ringbuffer_init(struct bsdk_ringbuffer* self, uint8_t* buff,
  * @param n how many bytes to copy
  * @return -1 on failure 0 on success
  */
-extern int bsdk_ringbuffer_write(struct bsdk_ringbuffer* self, uint8_t* src, size_t n);
+extern int bsdk_ringbuffer_write(struct bsdk_ringbuffer *self, uint8_t *src, size_t n);
 
 /**
  *
@@ -51,6 +50,6 @@ extern int bsdk_ringbuffer_write(struct bsdk_ringbuffer* self, uint8_t* src, siz
  * @param n how many bytes to retrieve
  * @return -1 on failure 0 on success
  */
-extern size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer* self, uint8_t* dst, size_t n);
+extern size_t bsdk_ringbuffer_read(struct bsdk_ringbuffer *self, uint8_t *dst, size_t n);
 
 #endif//BSDK_RINGBUFF_H

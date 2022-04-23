@@ -11,17 +11,16 @@
 #include <stddef.h>
 #include <stdint.h>
 
-struct bsdk_queue
-{
-    uint8_t* data;
-    /**
+struct bsdk_queue {
+	uint8_t *data;
+	/**
      * The rw_off of the bsdk_queue as an offset that satisfies offset < stack_size
      */
-    size_t rw_off;
-    /**
+	size_t rw_off;
+	/**
      * The bsdk_stack size in bytes
      */
-    size_t queue_size;
+	size_t queue_size;
 };
 
 /**
@@ -32,7 +31,7 @@ struct bsdk_queue
  * @param buff Backing buffer to use with this bsdk_stack
  * @param buff_len How long is the backing buffer
  */
-extern void bsdk_queue_init(struct bsdk_queue* self, uint8_t* buff, size_t buff_len);
+extern void bsdk_queue_init(struct bsdk_queue *self, uint8_t *buff, size_t buff_len);
 
 /**
  * Pushes a value on to the rw_off of the `self` bsdk_stack.
@@ -41,7 +40,7 @@ extern void bsdk_queue_init(struct bsdk_queue* self, uint8_t* buff, size_t buff_
  * @param buff_len How many bytes to push from buff into the bsdk_stack
  * @return -1 if the push would go over the bsdk_stack's rw_off 0 otherwise
  */
-extern int bsdk_queue_add(struct bsdk_queue* self, uint8_t* buff, size_t buff_len);
+extern int bsdk_queue_add(struct bsdk_queue *self, uint8_t *buff, size_t buff_len);
 
 /**
  * Removes a value off the rw_off of the bsdk_stack (it will remain in memory however).
@@ -50,5 +49,5 @@ extern int bsdk_queue_add(struct bsdk_queue* self, uint8_t* buff, size_t buff_le
  * @param buff_len How many bytes to pop from the bsdk_stack into buff
  * @return -1 if the pop would go under the bsdk_stack start 0 otherwise
  */
-extern int bsdk_queue_head(struct bsdk_queue* self, uint8_t* buff, size_t buff_len);
-#endif //KKC_QEUE_H_
+extern int bsdk_queue_head(struct bsdk_queue *self, uint8_t *buff, size_t buff_len);
+#endif//KKC_QEUE_H_

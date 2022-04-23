@@ -22,7 +22,7 @@ inline uint32_t reverse(uint32_t x)
 	return x;
 }
 
-void gen_table(uint32_t* table, uint32_t polynomial, bool selflect_in, bool selflect_out)
+void gen_table(uint32_t *table, uint32_t polynomial, bool selflect_in, bool selflect_out)
 {
 	for (uint32_t byte = 0; byte < 256; ++byte) {
 		uint32_t crc = (selflect_in ? (reverse(byte) >> 24) : byte);
@@ -37,7 +37,7 @@ void gen_table(uint32_t* table, uint32_t polynomial, bool selflect_in, bool self
 	}
 }
 
-inline uint32_t crc32_impl_lookup(const uint8_t* data, size_t data_len, const uint32_t* table, int mode, uint32_t orig)
+inline uint32_t crc32_impl_lookup(const uint8_t *data, size_t data_len, const uint32_t *table, int mode, uint32_t orig)
 {
 	uint32_t crc32 = 0xFFFFFFFF;
 	uint32_t lookup_idx = 0;
@@ -54,28 +54,28 @@ inline uint32_t crc32_impl_lookup(const uint8_t* data, size_t data_len, const ui
 		return crc32 ^ orig;
 }
 
-uint32_t crc32_calc(const uint8_t* data, size_t data_len)
+uint32_t crc32_calc(const uint8_t *data, size_t data_len)
 {
 	gen_table(crc32_table, CRC32POLY, true, true);
 	uint32_t calc = crc32_impl_lookup(data, data_len, crc32_table, 0, 0);
 	return calc;
 }
 
-bool crc32_check(const uint8_t* data, size_t data_len, uint32_t orig)
+bool crc32_check(const uint8_t *data, size_t data_len, uint32_t orig)
 {
 	gen_table(crc32_table, CRC32POLY, true, true);
 	uint32_t calc = crc32_impl_lookup(data, data_len, crc32_table, 1, orig);
 	return calc;
 }
 
-uint32_t crc32c_calc(const uint8_t* data, size_t data_len)
+uint32_t crc32c_calc(const uint8_t *data, size_t data_len)
 {
 	gen_table(crc32_table, CRC32CPOLY, true, true);
 	uint32_t calc = crc32_impl_lookup(data, data_len, crc32_table, 0, 0);
 	return calc;
 }
 
-bool crc32c_check(const uint8_t* data, size_t data_len, uint32_t orig)
+bool crc32c_check(const uint8_t *data, size_t data_len, uint32_t orig)
 {
 	gen_table(crc32_table, CRC32CPOLY, true, true);
 	uint32_t calc = crc32_impl_lookup(data, data_len, crc32_table, 1, orig);

@@ -8,7 +8,6 @@
  * All rights reserved.
  */
 
-
 #ifndef BSDK_MEMUTILS_H
 #define BSDK_MEMUTILS_H
 
@@ -22,7 +21,7 @@
  * @param src Where to copy from
  * @param n How many bytes to copy
  */
-extern void bsdk_memcopy(void* dst, void* src, size_t n);
+extern void bsdk_memcopy(void *dst, void *src, size_t n);
 
 /**
  * Copy n bytes from source to dest wrapping over mod in dst
@@ -31,7 +30,7 @@ extern void bsdk_memcopy(void* dst, void* src, size_t n);
  * @param n How many bytes to copy
  * @param mod wrap over this mod
  */
-extern void bsdk_memcopy_dst_mod(void* dst, void* src, size_t n, size_t mod);
+extern void bsdk_memcopy_dst_mod(void *dst, void *src, size_t n, size_t mod);
 
 /**
  * Copy n bytes from source to dest wrapping over mod in source
@@ -40,7 +39,7 @@ extern void bsdk_memcopy_dst_mod(void* dst, void* src, size_t n, size_t mod);
  * @param n How many bytes to copy
  * @param mod wrap over this mod
  */
-extern void bsdk_memcopy_src_mod(void* dst, void* src, size_t n, size_t mod);
+extern void bsdk_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
 
 /**
  * Compare a to b in constant time a and b must have the same length n
@@ -49,7 +48,7 @@ extern void bsdk_memcopy_src_mod(void* dst, void* src, size_t n, size_t mod);
  * @param n
  * @return 0 if the a != b 1 otherwise
  */
-extern bool bsdk_ct_strcmp(const char* a, const char* b, size_t n);
+extern bool bsdk_ct_strcmp(const char *a, const char *b, size_t n);
 
 /**
  * Compare a to b until null is found or n is reached
@@ -58,7 +57,7 @@ extern bool bsdk_ct_strcmp(const char* a, const char* b, size_t n);
  * @param n
  * @return 0 if a != b 1 otherwise
  */
-extern bool bsdk_strcmpn(const char* a, const char* b, size_t n);
+extern bool bsdk_strcmpn(const char *a, const char *b, size_t n);
 
 /**
  * Compare n bytes from a and b
@@ -67,7 +66,7 @@ extern bool bsdk_strcmpn(const char* a, const char* b, size_t n);
  * @param n
  * @return 0 if a != b 1 otherwise
  */
-extern bool bsdk_bytecmp(const uint8_t* a, const uint8_t* b, size_t n);
+extern bool bsdk_bytecmp(const uint8_t *a, const uint8_t *b, size_t n);
 
 /**
  * Measure a C string length up to the first null character
@@ -75,7 +74,7 @@ extern bool bsdk_bytecmp(const uint8_t* a, const uint8_t* b, size_t n);
  * @param max the maximum length to measure to (to avoid dos)
  * @return the size of the string
  */
-extern size_t bsdk_strlen(const char* str, size_t max);
+extern size_t bsdk_strlen(const char *str, size_t max);
 
 /**
  * Copies at most n characters from source to dst, stops at null or n
@@ -84,7 +83,7 @@ extern size_t bsdk_strlen(const char* str, size_t max);
  * @param n
  * @return the number of characters copied
  */
-extern size_t bsdk_strcpn(char* dst, const char* src, size_t n);
+extern size_t bsdk_strcpn(char *dst, const char *src, size_t n);
 
 /**
  * Copy characters from dst to source until null is found, this function should not
@@ -94,6 +93,6 @@ extern size_t bsdk_strcpn(char* dst, const char* src, size_t n);
  * @param dst
  * @param src
  */
-extern void bsdk_strcp(char* dst, const char* src);
+extern void bsdk_strcp(char *dst, const char *src);
 
 #endif

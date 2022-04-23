@@ -11,17 +11,16 @@
 #include <stddef.h>
 #include <stdint.h>
 
-struct bsdk_stack
-{
-    uint8_t* data;
-    /**
+struct bsdk_stack {
+	uint8_t *data;
+	/**
      * The rw_off of the bsdk_stack as an offset that satisfies offset < stack_size
      */
-    size_t rw_off;
-    /**
+	size_t rw_off;
+	/**
      * The bsdk_stack size in bytes
      */
-    size_t stack_size;
+	size_t stack_size;
 };
 
 /**
@@ -32,7 +31,7 @@ struct bsdk_stack
  * @param buff Backing buffer to use with this bsdk_stack
  * @param buff_len How long is the backing buffer
  */
-extern void stack_init(struct bsdk_stack* self, uint8_t* buff, size_t buff_len);
+extern void stack_init(struct bsdk_stack *self, uint8_t *buff, size_t buff_len);
 
 /**
  * Pushes a value on to the rw_off of the `self` bsdk_stack.
@@ -41,7 +40,7 @@ extern void stack_init(struct bsdk_stack* self, uint8_t* buff, size_t buff_len);
  * @param buff_len How many bytes to push from buff into the bsdk_stack
  * @return -1 if the push would go over the bsdk_stack's rw_off 0 otherwise
  */
-extern int stack_push(struct bsdk_stack* self, uint8_t* buff, size_t buff_len);
+extern int stack_push(struct bsdk_stack *self, uint8_t *buff, size_t buff_len);
 
 /**
  * Removes a value off the rw_off of the bsdk_stack (it will remain in memory however).
@@ -50,6 +49,6 @@ extern int stack_push(struct bsdk_stack* self, uint8_t* buff, size_t buff_len);
  * @param buff_len How many bytes to pop from the bsdk_stack into buff
  * @return -1 if the pop would go under the bsdk_stack start 0 otherwise
  */
-extern int stack_pop(struct bsdk_stack* self, uint8_t* buff, size_t buff_len);
+extern int stack_pop(struct bsdk_stack *self, uint8_t *buff, size_t buff_len);
 
 #endif

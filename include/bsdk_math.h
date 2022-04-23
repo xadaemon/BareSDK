@@ -10,8 +10,8 @@
 
 #include <bsdk_common.h>
 
-#define bsdk_min(A, B) ((A) < (B) ? (A):(B))
-#define bsdk_max(A, B) ((A) > (B) ? (A):(B))
+#define bsdk_min(A, B) ((A) < (B) ? (A) : (B))
+#define bsdk_max(A, B) ((A) > (B) ? (A) : (B))
 
 extern uint64_t bsdk_exp(uint32_t base, uint16_t exp);
 

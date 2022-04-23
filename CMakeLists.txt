@@ -11,8 +11,8 @@ set(CMAKE_C_STANDARD 99)
 
 file(GLOB CSources source/*.c)
 file(GLOB CHeaders include/*.h)
-add_library(bareSDK STATIC ${CSources} ${CHeaders})
-target_compile_options(bareSDK PUBLIC
+add_library(bsdk STATIC ${CSources} ${CHeaders})
+target_compile_options(bsdk PUBLIC
         -fstrict-aliasing
         -Wall
         -Wextra
@@ -23,7 +23,21 @@ target_compile_options(bareSDK PUBLIC
         -nostdlib
         -static
         )
-target_include_directories(bareSDK PUBLIC include)
+target_include_directories(bsdk PUBLIC include)
+
+add_library(dynbsdk SHARED ${CSources} ${CHeaders})
+target_compile_options(dynbsdk PUBLIC
+        -fstrict-aliasing
+        -Wall
+        -Wextra
+        -pedantic
+        -Werror
+        -O2
+        -ffreestanding
+        -nostdlib
+        -static
+        )
+target_include_directories(dynbsdk PUBLIC include)
 
 add_executable(demo demo.c)
-target_link_libraries(demo bareSDK)
+target_link_libraries(demo bsdk)
