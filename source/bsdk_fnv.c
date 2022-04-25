@@ -57,3 +57,8 @@ uint64_t fnv1ext(const uint8_t *data, size_t n)
 
 	return fnv1a(hash_bytes, 8);
 }
+
+void fnv2(uint64_t *digest, const uint8_t *data, size_t n)
+{
+
+}
