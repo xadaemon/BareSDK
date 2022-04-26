@@ -21,7 +21,6 @@ target_compile_options(bsdk PUBLIC
         -O2
         -ffreestanding
         -nostdlib
-        -static
         )
 target_include_directories(bsdk PUBLIC include)
 
@@ -35,7 +34,6 @@ target_compile_options(dynbsdk PUBLIC
         -O2
         -ffreestanding
         -nostdlib
-        -static
         )
 target_include_directories(dynbsdk PUBLIC include)
 

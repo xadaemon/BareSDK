@@ -48,7 +48,7 @@ extern void bsdk_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod);
  * @param n
  * @return 0 if the a != b 1 otherwise
  */
-extern bool bsdk_ct_strcmp_ct(const char *a, const char *b, size_t n);
+extern bool bsdk_ct_strcmp_ct(char *a, char *b, size_t n);
 
 /**
  * Compare a to b until null is found or n is reached
@@ -57,7 +57,7 @@ extern bool bsdk_ct_strcmp_ct(const char *a, const char *b, size_t n);
  * @param n
  * @return 0 if a != b 1 otherwise
  */
-extern bool bsdk_strcmp_s(const char *a, const char *b, size_t n);
+extern bool bsdk_strcmp_s(char *a, char *b, size_t n);
 
 /**
  * Compare n bytes from a and b
@@ -83,7 +83,7 @@ extern size_t bsdk_strlen(const char *str, size_t max);
  * @param n
  * @return the number of characters copied
  */
-extern size_t bsdk_strcp_s(const char *dst, const char *src, size_t n);
+extern size_t bsdk_strcp_s(char *dst, char *src, size_t n);
 
 /**
  * Copy characters from dst to source until null is found, this function should not
@@ -93,7 +93,7 @@ extern size_t bsdk_strcp_s(const char *dst, const char *src, size_t n);
  * @param dst
  * @param src
  */
-extern void bsdk_strcp(const char *dst, const char *src);
+extern void bsdk_strcp(char *dst, char *src);
 
 /**
  * Append src to dst up to null in src or n in dest

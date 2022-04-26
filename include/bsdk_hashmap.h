@@ -12,10 +12,13 @@
 #include <stddef.h>
 #include <stdint.h>
 
-extern const size_t HASHMAP_ENTRY_SZ;
+/**
+ * Set the size of keys, impacts how much memory each entry uses
+ */
+#define HASHMAP_KEY_LEN 64
 
+extern const size_t HASHMAP_ENTRY_SZ;
 #define HASHMAP_SIZE_FOR(N) ((N)*HASHMAP_ENTRY_SZ)
-#define HASHMAP_KEY_FRAG_LEN 255
 
 struct bsdk_hashmap_entry;
 
@@ -25,8 +28,8 @@ struct bsdk_hashmap {
 };
 
 extern int bsdk_hashmap_init(struct bsdk_hashmap *self, struct bsdk_hashmap_entry *inner_buffer, uint64_t len);
-extern int bsdk_hashmap_insert(struct bsdk_hashmap *self, uint8_t *key, size_t key_len, void *value);
-extern void *bsdk_hashmap_get(struct bsdk_hashmap *self, uint8_t *key, size_t key_len);
-extern void bsdk_hashmap_set(struct bsdk_hashmap *self, void *key, size_t key_len, void *value);
+extern int bsdk_hashmap_insert(struct bsdk_hashmap *self, uint8_t *key, void *value);
+extern void *bsdk_hashmap_get(struct bsdk_hashmap *self, uint8_t *key);
+extern void bsdk_hashmap_set(struct bsdk_hashmap *self, void *key, void *value);
 
 #endif//BSDK_HASHMAP_H_

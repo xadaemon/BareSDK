@@ -13,7 +13,7 @@ inline void bsdk_memcopy(void *dst, void *src, size_t n)
 	}
 }
 
-size_t bsdk_strcp_s(const char *dst, const char *src, size_t n)
+size_t bsdk_strcp_s(char *dst, char *src, size_t n)
 {
 	size_t i = 0;
 	while ((dst[i] = src[i]) && i < n)
@@ -21,7 +21,7 @@ size_t bsdk_strcp_s(const char *dst, const char *src, size_t n)
 	return i;
 }
 
-void bsdk_strcp(const char *dst, const char *src)
+void bsdk_strcp(char *dst, char *src)
 {
 	while ((*dst = *src)) {
 		dst++;
@@ -47,7 +47,7 @@ inline void bsdk_memcopy_src_mod(void *dst, void *src, size_t n, size_t mod)
 	}
 }
 
-bool bsdk_ct_strcmp_ct(const char *a, const char *b, size_t n)
+bool bsdk_ct_strcmp_ct(char *a, char *b, size_t n)
 {
 	volatile uint8_t res = 0;
 	for (size_t i = 0; i < n; i++) {
@@ -56,7 +56,7 @@ bool bsdk_ct_strcmp_ct(const char *a, const char *b, size_t n)
 	return !res;
 }
 
-bool bsdk_strcmp_s(const char *a, const char *b, size_t n)
+bool bsdk_strcmp_s(char *a, char *b, size_t n)
 {
 	for (size_t i = 0; i < n; i++) {
 		if ((a[i] ^ b[i]) != 0)

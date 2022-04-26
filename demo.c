@@ -1,4 +1,4 @@
-#include "bsdk_fnv.h"
+#include "bsdk_hashes.h"
 #include <bsdk_codes.h>
 #include <bsdk_crc32.h>
 #include <bsdk_hashmap.h>
@@ -51,8 +51,8 @@ int main(void)
 	printf("%s, %X\n", str, crc32c_calc((uint8_t *)str, len));
 
 	bsdk_hashmap_init(&hashmap, hm_buff, 10);
-	bsdk_hashmap_insert(&hashmap, (uint8_t *)str, len, (void *)"test");
-	char *str2 = (char *)bsdk_hashmap_get(&hashmap, (uint8_t *)str, len);
+	bsdk_hashmap_insert(&hashmap, (uint8_t *)str, (void *)"test");
+	char *str2 = (char *)bsdk_hashmap_get(&hashmap, (uint8_t *)str);
 	printf("%s \n", str2);
 
 	printf("%lu \n", bsdk_exp(2, 32));
@@ -60,7 +60,11 @@ int main(void)
 
 	char *str3 = "basification";
 
-	printf("%s - %lX", str3, fnv1ext((uint8_t *)str3, bsdk_strlen(str3, 100)));
+	printf("%s - %lX", str3, bsdk_fnv1ext((uint8_t *)str3, bsdk_strlen(str3, 100)));
+
+	uint8_t digest[16];
+
+	bsdk_merhash(digest, (uint8_t *)str3, bsdk_strlen(str3, 100));
 
 	return 0;
 }
