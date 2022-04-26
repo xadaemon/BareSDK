@@ -85,3 +85,14 @@ size_t bsdk_strlen(const char *str, size_t max)
 	}
 	return i;
 }
+
+void bsdk_strcat_s(const char *dst, const char *src, size_t n)
+{
+	size_t dst_len;
+	size_t src_len;
+
+	dst_len = bsdk_strlen(dst, n);
+	src_len = bsdk_strlen(src, n);
+
+
+}

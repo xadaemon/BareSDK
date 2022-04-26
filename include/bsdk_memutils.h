@@ -96,7 +96,8 @@ extern size_t bsdk_strcp_s(char *dst, char *src, size_t n);
 extern void bsdk_strcp(char *dst, char *src);
 
 /**
- * Append src to dst up to null in src or n in dest
+ * Copy at most n bytes from src onto the end of dest overriding it's null byte and
+ * and adding a new null on the end of the resulting string.
  * @param dst
  * @param src
  * @param n
